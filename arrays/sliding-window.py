@@ -2,10 +2,10 @@
 def maximumLengthSubstring(s: str) -> int:
     """ Função que tira o comprimento de substring com letras não repetidas mais de duas vezes.
 
-    Arg:
+    Args:
         s (str): String a ser analizada.
     
-    Return:
+    Returns:
         int: tamanho máximo de substring com letras não repetidas mais de duas vezes.
     """
     # inicializando os ponteiros l, r para tirar o comprimento total da substring

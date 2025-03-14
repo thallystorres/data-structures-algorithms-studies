@@ -6,7 +6,7 @@ def containsNearbyDuplicate(nums: list[int], k: int) -> bool:
         nums (list[int]): lista a ser verificada.
         k (int): distância máxima.
     
-    Return:
+    Returns:
         bool: Há ou não itens iguais separados pela distância k ou menor.
     """
     # inicializa hashmap que vai registrar a última aparição do item na lista

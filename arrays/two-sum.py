@@ -6,7 +6,7 @@ def twoSum(nums: list[int], target: int) -> list[int]:
         nums (list[int]): Lista a ter seus itens analisados
         target (int): Número alvo a ser localizado
 
-    Return:
+    Returns:
         list[int]: Lista dos índices em que se encontram os números somados entre si
     
     """

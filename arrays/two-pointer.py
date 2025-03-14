@@ -2,14 +2,14 @@
 def revereWords(s: str) -> str:
     """Função que inverte cada palavra de uma string
     
-    Arg:
+    Args:
         s (str): String a ser invertida
     
     
-    Return:
+    Returns:
         (str): String invertida
     """
-    # inicialização de ponteiros de início e finalde palavra
+    # inicialização de ponteiros de início e final de palavra
     l, r = 0, 0
     # inicialização de string vazia que seram adicionadas as palavras invertidas
     res = ''

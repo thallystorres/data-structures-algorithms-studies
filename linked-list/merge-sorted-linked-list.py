@@ -1,27 +1,33 @@
-# agora vamos tentar juntar duas linked list ordenadas!
+#Função exemplo para mergear duas LLs ordenadas, LeetCode 21
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
 class Solution:
-    def mergeTwoLists(self, list1: ListNode, list2: ListNode) -> ListNode: # okay, vou ter que repassar por aqui mais tarde, achei meio confusa essa resolução
-        dummy = ListNode() # primeiro criamos um "dummy" (pelo visto é tipo um boneco de treinamento) da classe ListNode, ou seja, ele vai ser uma Linked List
-        cur = dummy # depois criamos um ponteiro para nos certificar em que parte da linked list estamos
+    def mergeTwoLists(self, list1: ListNode, list2: ListNode) -> ListNode:
+        """Função que junta duas LLs ordenadas
 
-        while list1 and list2: #enquanto ambas as listas não tiverem terminado faremos o loop
-            if list1.val > list2.val: # verificamos se valor de uma é maior que a outra
-                cur.next = list2 # e depois colocamos o no próximo valor do dummy o valor do menor entre os dois valores passados
-                list2 = list2.next # e pulamos uma casinha
-            else:
-                cur.next = list1
+        Args:
+            list1 (ListNode): Head da primeira LL ser analizada
+            list2 (ListNode): Head da segunda LL ser analizada
+
+        Returns:
+            ListNode: Head da lista mergeada
+        """
+
+        #Nesse algoritmo, primeiro inicializamos uma nova LL vazia que servirá para armazenar a ordenação de ambas LLs, verificando a cada iteração qual o próximo valor de cada LL é menor entre si até chegarmos no fim da primeira LL e por fim juntamos com o resto da lista que sobrou
+
+        head = ListNode()
+        current = head
+        while list1 and list2:
+            if list1.val < list2.val:
+                current.next = list1
                 list1 = list1.next
-            
-            cur = cur.next # após isso pulamos uma casinha para ser preenchida
-        
-        if list1: # se ainda sobrar uma lista a ser finalizada, o próximo valor do dummy será o seu último
-            cur.next = list1
-        else:
-            cur.next = list2
+            else:
+                current.next = list2
+                list2 = list2.next
+            current = current.next
+        current.next = list1 or list2
 
-        return dummy.next # depois retornamos o dummy.next, já que o head é um None
+        return head.next

@@ -2,10 +2,10 @@
 def firstUniqChar(s: str) -> int:
     """Função que retorna o primeiro caracter que não se repete na string.
 
-    Arg:
+    Args:
         s (str): String a ser analisada.
     
-    Return:
+    Returns:
         int: Índice do caracter que não se repete na string, caso não há, retorna -1.
     """
     # inicializando hashmap para relacionar string, index de primeira aparição e número de aparições
